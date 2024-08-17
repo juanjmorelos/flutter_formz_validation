@@ -1,5 +1,5 @@
-import 'package:first_flutter_app/pages/form/user_form.dart';
-import 'package:first_flutter_app/pages/home/home_page.dart';
+import 'package:first_flutter_app/screens/form/user_form.dart';
+import 'package:first_flutter_app/screens/home/home_page.dart';
 import 'package:go_router/go_router.dart';
 
 final route = GoRouter(
