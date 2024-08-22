@@ -14,19 +14,19 @@ class FormPoviderNotifier  extends StateNotifier<ProviderClass> {
   void onNameChange(String value) {
     final name = PlainTextValidator.dirty(value);
     final status = Formz.validate([name, state.lastName, state.email]);
-    state = state.copyWith(name: name, status: status);
+    state = state.copyWith(name: name, isValid: status);
   }
 
   void onLastNameChange(String value) {
     final lastName = PlainTextValidator.dirty(value);
     final status = Formz.validate([state.name, lastName, state.email]);
-    state = state.copyWith(lastName: lastName, status: status);
+    state = state.copyWith(lastName: lastName, isValid: status);
   }
 
   void onEmailChange(String value) {
     final email = EmailValidator.dirty(value);
     final status = Formz.validate([state.name, state.lastName, email]);
-    state = state.copyWith(email: email, status: status);
+    state = state.copyWith(email: email, isValid: status);
   }
 
   setIsSuccess(bool value) {

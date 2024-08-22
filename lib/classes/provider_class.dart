@@ -8,7 +8,7 @@ class ProviderClass {
   final String message;
   final bool success;
   final bool isLoading;
-  final bool status;
+  final bool isValid;
   
   ProviderClass({
     this.name = const PlainTextValidator.pure(),
@@ -17,7 +17,7 @@ class ProviderClass {
     this.message = "",
     this.success = false,
     this.isLoading = false,
-    this.status = false
+    this.isValid = false
   });
 
   ProviderClass copyWith({
@@ -27,7 +27,7 @@ class ProviderClass {
     String? message,
     bool? success,
     bool? isLoading,
-    bool? status
+    bool? isValid
   }) {
     return ProviderClass(
       name: name ?? this.name,
@@ -36,7 +36,7 @@ class ProviderClass {
       message: message ?? this.message,
       success: success ?? this.success,
       isLoading: isLoading ?? this.isLoading,
-      status: status ?? this.status
+      isValid: isValid ?? this.isValid
     );
   }
 }

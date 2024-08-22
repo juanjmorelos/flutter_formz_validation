@@ -64,7 +64,7 @@ class _UserFormState extends ConsumerState<UserForm> {
                             FilledButton(
                               onPressed: () {
                                 key.currentState?.validate();
-                                if(provider.status) {
+                                if(provider.isValid) {
                                   notifier.registerUser().then((value) {
                                     showDialog(
                                       context: context,
