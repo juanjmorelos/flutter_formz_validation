@@ -29,6 +29,7 @@ class FormControl extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller,
             onChanged: onChanged,
             validator: validator,

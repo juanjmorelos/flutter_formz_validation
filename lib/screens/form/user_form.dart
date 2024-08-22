@@ -17,9 +17,6 @@ class UserForm extends ConsumerStatefulWidget {
 
 class _UserFormState extends ConsumerState<UserForm> {
     final key = GlobalKey<FormState>();
-    final name = TextEditingController();
-    final lastName = TextEditingController();
-    final email = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +42,16 @@ class _UserFormState extends ConsumerState<UserForm> {
                     child: Column(
                       children: [
                         FormControl(
-                          controller: name,
                           label: "Nombre",
                           onChanged: ref.read(formProvider.notifier).onNameChange,
                           validator: (value) => ref.read(formProvider).name.error?.getErrorMessage(),
                         ),
                         FormControl(
-                          controller: lastName,
                           label: "Apellido",
                           onChanged: ref.read(formProvider.notifier).onLastNameChange,
                           validator: (value) => ref.read(formProvider).lastName.error?.getErrorMessage(),
                         ),
                         FormControl(
-                          controller: email,
                           label: "Email", 
                           keyboardType: TextInputType.emailAddress,
                           onChanged: ref.read(formProvider.notifier).onEmailChange,
@@ -69,6 +63,7 @@ class _UserFormState extends ConsumerState<UserForm> {
                           children: [
                             FilledButton(
                               onPressed: () {
+                                key.currentState?.validate();
                                 if(provider.status) {
                                   notifier.registerUser().then((value) {
                                     showDialog(
