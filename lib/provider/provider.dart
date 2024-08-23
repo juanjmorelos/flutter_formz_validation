@@ -48,4 +48,12 @@ class FormPoviderNotifier  extends StateNotifier<ProviderClass> {
     setIsSuccess(true);
     setIsLoading(false);
   }
+
+  Map<String, dynamic> createJson() {
+    return {
+      "name": state.name.value.trim(),
+      "lastName": state.lastName.value.trim(),
+      "email": state.email.value.trim(),
+    };
+  }
 }

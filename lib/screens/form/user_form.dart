@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:first_flutter_app/screens/form/components/dialog.dart';
 import 'package:first_flutter_app/screens/form/components/form_control.dart';
 import 'package:first_flutter_app/screens/form/components/full_screen_loading.dart';
@@ -68,7 +70,13 @@ class _UserFormState extends ConsumerState<UserForm> {
                                   notifier.registerUser().then((value) {
                                     showDialog(
                                       context: context,
-                                      builder: (BuildContext context) => DialogMessage(message: ref.read(formProvider).message),
+                                      builder: (BuildContext context) => DialogMessage(
+                                        message: ref.read(formProvider).message,
+                                        onPressed: () {
+                                          String jsonToSend = encodeJsonToBase64(notifier.createJson());
+                                          context.go("/json/$jsonToSend");
+                                        },
+                                      ),
                                     );
                                   });
                                 }
@@ -95,4 +103,11 @@ class _UserFormState extends ConsumerState<UserForm> {
       ),
     );
   }
+}
+
+String encodeJsonToBase64(Map<String, dynamic> json) {
+  String jsonString = jsonEncode(json);
+  List<int> bytes = utf8.encode(jsonString);
+  String base64String = base64Encode(bytes);
+  return base64String;
 }
