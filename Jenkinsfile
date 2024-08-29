@@ -1,13 +1,5 @@
 pipeline{
-    agent {
-        docker {
-            image 'cirrusci/flutter:stable'
-            args '-u root:root' // Si necesitas permisos de root
-        }
-    }
-    environment {
-        FLUTTER = "/Users/juanmorelos/development/flutter/bin/flutter"
-    }
+    agent any
     stages{
         stage('Flutter Pub Get') {
             steps {
