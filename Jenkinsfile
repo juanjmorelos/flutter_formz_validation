@@ -1,19 +1,19 @@
 pipeline{
     agent any
     environment {
-        PATH = "${env.PATH}:/Users/juanmorelos/development/flutter/bin"
+        FLUTTER = "/Users/juanmorelos/development/flutter/bin/flutter"
     }
     stages{
         stage('Flutter Pub Get') {
             steps {
                 // Instala las dependencias de Flutter
-                sh 'flutter pub get --no-example'
+                sh '${FLUTTER} pub get --no-example'
             }
         }
         stage('Build Web') {
             steps {
                 // Construye la aplicación web de Flutter
-                sh 'flutter build web'
+                sh '${FLUTTER} build web'
             }
         }
         stage('deploy') {
