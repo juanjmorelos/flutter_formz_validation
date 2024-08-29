@@ -4,7 +4,7 @@ pipeline{
         stage('Flutter Pub Get') {
             steps {
                 // Instala las dependencias de Flutter
-                sh 'flutter pub get --no-example'
+                sh 'flutter doctor'
             }
         }
         stage('Build Web') {
