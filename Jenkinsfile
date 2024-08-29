@@ -7,7 +7,9 @@ pipeline{
         stage('Install flutter') {
             steps {
                 // Instala las dependencias de Flutter
-                sh 'sudo snap install flutter --classic'
+                sh 'curl https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.7.3-stable.tar.xz -o /foo/bar/flutter.tar.xz'
+                sh 'apt-get install xz-utils'
+                sh 'tar xf /foo/bar/flutter.tar.xz'
             }
         }
         stage('Flutter Pub Get') {
