@@ -4,16 +4,22 @@ pipeline{
         FLUTTER = "/Users/juanmorelos/development/flutter/bin/flutter"
     }
     stages{
+        stage('Install flutter') {
+            steps {
+                // Instala las dependencias de Flutter
+                sh 'sudo snap install flutter --classic'
+            }
+        }
         stage('Flutter Pub Get') {
             steps {
                 // Instala las dependencias de Flutter
-                sh '${FLUTTER} pub get --no-example'
+                sh 'flutter pub get --no-example'
             }
         }
         stage('Build Web') {
             steps {
                 // Construye la aplicación web de Flutter
-                sh '${FLUTTER} build web'
+                sh 'flutter build web'
             }
         }
         stage('deploy') {
