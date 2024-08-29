@@ -1,8 +1,7 @@
 pipeline{
     agent any
     environment {
-        FLUTTER_HOME = '/opt/flutter' // Ruta al SDK de Flutter en el agente
-        PATH = "${FLUTTER_HOME}/bin:${env.PATH}"
+        PATH = "${env.PATH}:/Users/juanmorelos/development/flutter/bin"
     }
     stages{
         stage('Flutter Pub Get') {
