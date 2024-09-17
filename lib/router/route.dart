@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/screens/fingerprint/fingerprint.dart';
 import 'package:first_flutter_app/screens/form/user_form.dart';
 import 'package:first_flutter_app/screens/home/home_page.dart';
 import 'package:first_flutter_app/screens/json/json_screen.dart';
@@ -8,7 +9,11 @@ final route = GoRouter(
     routes: [
         GoRoute(
             path: "/",
-            builder: (context, state) => const HomePage(),
+            builder: (context, state) => const Fingerprint(),
+        ),
+        GoRoute(
+          path: "/home",
+          builder: (context, state) => const HomePage(),
         ),
         GoRoute(
             path: "/form",

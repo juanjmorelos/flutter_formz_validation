@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:first_flutter_app/screens/form/components/dialog.dart';
 import 'package:first_flutter_app/screens/form/components/form_control.dart';
-import 'package:first_flutter_app/screens/form/components/full_screen_loading.dart';
+import 'package:first_flutter_app/shared/components/full_screen_loading.dart';
 import 'package:first_flutter_app/provider/provider.dart';
 import 'package:first_flutter_app/validators/email_validator.dart';
 import 'package:first_flutter_app/validators/plain_text_validator.dart';
