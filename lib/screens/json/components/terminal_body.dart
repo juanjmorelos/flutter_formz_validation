@@ -49,7 +49,7 @@ class _TerminalBodyState extends State<TerminalBody> {
             decodeJson(widget.content),
             language: 'json',
             theme: atomCustomDarkTheme(color: widget.color),
-            padding: EdgeInsets.zero,  // Sin relleno adicional
+            padding: EdgeInsets.zero, 
             textStyle: const TextStyle(
               fontFamily: 'Jetbrains',
               fontStyle: FontStyle.normal,
