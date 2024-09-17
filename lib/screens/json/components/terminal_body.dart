@@ -39,6 +39,8 @@ class _TerminalBodyState extends State<TerminalBody> {
         thumbVisibility: true,
         trackVisibility: true,
         thumbColor: const Color.fromRGBO(255, 255, 255, 0.6),
+        trackRadius: const Radius.circular(10),
+        trackColor: const Color.fromRGBO(255, 255, 255, 0.15),
         radius: const Radius.circular(10),
         child: SingleChildScrollView(
           controller: _scrollController,
