@@ -21,16 +21,20 @@ class TerminalBody extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(borderRadius), bottomRight: Radius.circular(borderRadius))
       ),
-      child: HighlightView(
-        decodeJson(content),
-        language: 'json',
-        theme: atomCustomDarkTheme(color: color),
-        padding: EdgeInsets.zero,  // Sin relleno adicional
-        textStyle: const TextStyle(
-          fontFamily: 'Jetbrains',
-          fontStyle: FontStyle.normal,
-          fontSize: 15,
-          color: Color.fromARGB(255, 202, 202, 202)
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        
+        child: HighlightView(
+          decodeJson(content),
+          language: 'json',
+          theme: atomCustomDarkTheme(color: color),
+          padding: EdgeInsets.zero,  // Sin relleno adicional
+          textStyle: const TextStyle(
+            fontFamily: 'Jetbrains',
+            fontStyle: FontStyle.normal,
+            fontSize: 15,
+            color: Color.fromARGB(255, 202, 202, 202)
+          ),
         ),
       ),
     );
